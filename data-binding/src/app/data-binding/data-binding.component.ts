@@ -12,7 +12,7 @@ export class DataBindingComponent implements OnInit {
   urlImagem = 'https://images.all-free-download.com/images/graphiclarge/white_love_514989.jpg';
 
   valorAtual: string = '';
-  valorSalvo: string = '';
+  valorSalvo = '';
 
   isMouseOver: boolean = false;
 
