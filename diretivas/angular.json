@@ -123,5 +123,11 @@
       }
     }
   },
+  "schematics": {
+    "@schematics/angular:component": {
+      "style": "scss",
+      "styleext": "scss"
+    }
+  },
   "defaultProject": "diretivas"
 }
