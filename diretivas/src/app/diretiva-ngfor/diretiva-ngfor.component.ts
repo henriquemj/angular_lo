@@ -16,5 +16,4 @@ export class DiretivaNgforComponent implements OnInit {
       let curso = this.cursos[i];
     }
   }
-
 }
