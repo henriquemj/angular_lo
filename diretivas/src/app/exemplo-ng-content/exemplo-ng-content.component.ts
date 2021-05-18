@@ -7,8 +7,6 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ExemploNgContentComponent implements OnInit {
 
-  @Input() nomeVariavel;
-
   constructor() { }
 
   ngOnInit(): void {
