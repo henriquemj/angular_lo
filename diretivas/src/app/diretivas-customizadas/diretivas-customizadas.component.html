@@ -1,15 +1,35 @@
-<p fundoAmarelo>
+<p fundoAmarelo >
     Texto com fundo amarelo.
-</p>
-
-<button fundoAmarelo>Botão com fundo amarelo</button>
-
-<p highlightMouse>
+  </p>
+  
+  <button fundoAmarelo>Botão com fundo amarelo.</button>
+  
+  <p highlightMouse>
     Texto com highlight quando passo o mouse.
-</p>
-
-<p [highlight]="'red'" [defaultColor]="'grey'">
+  </p>
+  
+  <p [highlight]="'red'" [defaultColor]="'grey'">
     Texto com highlight com cores customizadas.
-</p>
-
-<button (click)="onMostrarCursos()"> Mostrar ou esconder cursos</button>
+  </p>
+  
+  <h5>Diretiva Estrutura customizada - ngElse</h5>
+  
+  <div *ngIf="mostrarCursos" >
+    Lista de cursos aqui.
+  </div>
+  <div *ngElse="mostrarCursos" >
+    Não existem cursos para serem listados.
+  </div>
+  
+  <br>
+  <button (click)="onMostrarCursos()">
+    Mostrar ou esconder cursos
+  </button>
+  <br>
+  
+  <!-- Para Angular v4+, usar <ng-template></ng-template> no lugar de <template></template> -->
+  <ng-template [ngElse]="mostrarCursos">
+    <div>
+      Não existem cursos para serem listados.
+    </div>
+  </ng-template>

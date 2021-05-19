@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-diretivas-customizadas',
   templateUrl: './diretivas-customizadas.component.html',
-  styleUrls: ['./diretivas-customizadas.component.scss']
+  styleUrls: ['./diretivas-customizadas.component.css']
 })
 export class DiretivasCustomizadasComponent implements OnInit {
 
@@ -11,10 +11,10 @@ export class DiretivasCustomizadasComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
-  
-  onMostrarCursos() {
+
+  onMostrarCursos(){
     this.mostrarCursos = !this.mostrarCursos;
   }
 
