@@ -3,21 +3,25 @@ import { BrowserModule } from '@angular/platform-browser';
 import {registerLocaleData} from '@angular/common';
 import br from '@angular/common/locales/pt';
 registerLocaleData(br, 'pt-BR');
+import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
 import { ExemplosPipesComponent } from './exemplos-pipes/exemplos-pipes.component';
 import { CamelCasePipe } from './camel-case.pipe';
-import { SettingsService } from './settings.service'
+import { SettingsService } from './settings.service';
+import { FiltroArrayPipe } from './filtro-array.pipe'
 
 @NgModule({
   declarations: [
     AppComponent,
     ExemplosPipesComponent,
-    CamelCasePipe
+    CamelCasePipe,
+    FiltroArrayPipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [
     /*{
