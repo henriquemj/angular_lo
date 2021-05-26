@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { interval } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-exemplos-pipes',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./exemplos-pipes.component.css']
 })
 export class ExemplosPipesComponent implements OnInit {
+
+  constructor() { }
 
   livro: any = {
     titulo: 'Learning JavaScript Data Structures and Algorithms 2nd ed',
@@ -16,32 +20,37 @@ export class ExemplosPipesComponent implements OnInit {
     url: 'http://a.co/glqjpRP'
   };
 
-  livros: string[] =['Angular 11','C#'];
+  livros: string[] = ['Java', 'Angular 2'];
 
   filtro: string;
 
-  addCurso(valor){
+  valorAsync = new Promise((resolve, reject) => {
+    setTimeout(() => resolve('Valor assíncrono'), 2000);
+  });
+
+  valorAsync2 = interval(2000)
+  .pipe(
+    map(valor => 'Valor assíncrono 2')
+  );
+
+  addCurso(valor) {
     this.livros.push(valor);
+    console.log(this.livros);
   }
 
-  obterCursos(){
+  obterCursos() {
 
     if (this.livros.length === 0 || this.filtro === undefined
-      || this.filtro.trim() === ''){
-        return this.livros;
-      }
+    || this.filtro.trim() === '') {
+      return this.livros;
+    }
 
-      return (this.livros.filter((v) => {
-        if (v.toLowerCase().indexOf(this.filtro.toLowerCase()) >= 0) {
-          return true;
-        }
-        return false;
-      });
+    return this.livros.filter(
+       v => v.toLocaleLowerCase().includes(this.filtro.toLocaleLowerCase())
+    );
   }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
 }
