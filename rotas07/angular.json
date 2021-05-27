@@ -6,9 +6,13 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "rotas": {
+    "rotas07": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -16,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/rotas",
+            "outputPath": "dist/rotas07",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -29,11 +33,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [
-              "node_modules/jquery/dist/jquery.js",
-              "node_modules/hammerjs/hammer.js",
-              "node_modules/materialize-css/dist/js/materialize.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -53,13 +53,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
                 }
               ]
             }
@@ -68,18 +68,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "rotas:build"
+            "browserTarget": "rotas07:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "rotas:build:production"
+              "browserTarget": "rotas07:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "rotas:build"
+            "browserTarget": "rotas07:build"
           }
         },
         "test": {
@@ -116,16 +116,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "rotas:serve"
+            "devServerTarget": "rotas07:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "rotas:serve:production"
+              "devServerTarget": "rotas07:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "rotas"
+  "defaultProject": "rotas07"
 }
