@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { CursosComponent } from './cursos/cursos.component';
 import { routing } from './app.routing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppComponent,
     HomeComponent,
     LoginComponent,
-    CursosComponent
+    CursosComponent,
+    CursoDetalheComponent
   ],
   imports: [
     BrowserModule,
